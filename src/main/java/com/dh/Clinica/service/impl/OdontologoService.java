@@ -1,8 +1,9 @@
-package com.dh.Clinica.service;
+package com.dh.Clinica.service.impl;
 
 import com.dh.Clinica.dto.OdontologoDTO;
 import com.dh.Clinica.entity.Odontologo;
 import com.dh.Clinica.repository.IOdontologoRepository;
+import com.dh.Clinica.service.IOdontologoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class OdontologoService implements IOdontologoService{
+public class OdontologoService implements IOdontologoService {
     @Autowired
     private IOdontologoRepository odontologoRepository;
 

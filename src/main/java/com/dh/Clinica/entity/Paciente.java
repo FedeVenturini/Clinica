@@ -1,15 +1,16 @@
 package com.dh.Clinica.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
-
+@Builder
 @Entity
+@NoArgsConstructor
 @AllArgsConstructor
 @Table
 @Getter
@@ -22,7 +23,10 @@ public class Paciente {
     private String nombre;
     private String apellido;
     private String dni;
-    private java.sql.Date fechaDeIngreso;
+    private Date fechaDeAlta;
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     private Set<Domicilio> domicilios = new HashSet<>();
+    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
+    @JsonIgnore
+    private Set<Turno> turnos;
 }

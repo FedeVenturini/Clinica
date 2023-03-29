@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
 public interface IPacienteService {
     void crearPaciente(PacienteDTO pacienteDTO);
     PacienteDTO buscarPaciente(Long id);

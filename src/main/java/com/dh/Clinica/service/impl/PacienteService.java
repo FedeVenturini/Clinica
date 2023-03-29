@@ -1,8 +1,9 @@
-package com.dh.Clinica.service;
+package com.dh.Clinica.service.impl;
 
 import com.dh.Clinica.dto.PacienteDTO;
 import com.dh.Clinica.entity.Paciente;
 import com.dh.Clinica.repository.IPacienteRepository;
+import com.dh.Clinica.service.IPacienteService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.Optional;
 import java.util.Set;
 
 @Service
-public class PacienteService implements IPacienteService{
+public class PacienteService implements IPacienteService {
     @Autowired
     private IPacienteRepository pacienteRepository;
 

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-@Service
 public interface IDomicilioService {
     void crearDomicilio(DomicilioDTO domicilioDTO);
     DomicilioDTO buscarDomicilio(Long id);
