@@ -2,6 +2,7 @@ package com.dh.Clinica.controller;
 
 import com.dh.Clinica.dto.DomicilioDTO;
 import com.dh.Clinica.service.IDomicilioService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,18 +28,18 @@ public class DomicilioController {
     }
 
     @PostMapping
-    public ResponseEntity<?> crearDomicilio(@RequestBody DomicilioDTO domicilioDTO){
+    public ResponseEntity<?> crearDomicilio(@Valid @RequestBody DomicilioDTO domicilioDTO){
         domicilioService.crearDomicilio(domicilioDTO);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
     @PutMapping
-    public ResponseEntity<?> modificarDomicilio(@RequestBody DomicilioDTO domicilioDTO){
+    public ResponseEntity<?> modificarDomicilio(@Valid @RequestBody DomicilioDTO domicilioDTO){
         domicilioService.actualizarDomicilio(domicilioDTO);
         return ResponseEntity.ok(HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public ResponseEntity<?> eliminarDomicilio(@PathVariable Long id){
         domicilioService.eliminarDomicilio(id);
         return ResponseEntity.ok(HttpStatus.OK);
