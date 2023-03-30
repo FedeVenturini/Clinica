@@ -12,7 +12,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Domicilio {
     @Id
-    @SequenceGenerator(name = "domicilio_sequence", sequenceName = "domicilio_sequence")
+    @SequenceGenerator(name = "domicilio_sequence", sequenceName = "domicilio_sequence", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "domicilio_sequence")
     private Long id;
     private String calle;
