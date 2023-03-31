@@ -1,7 +1,7 @@
 window.addEventListener('load', function () {
 
     (function(){
-      const url = '/odontologos/list';
+      const url = '/odontologos';
       const settings = {
         method: 'GET'
     }
@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
                                       odontologo.id +
                                       '</button>';
 
-        studentRow.innerHTML = '<td>' + updateButton + '</td>' +
+        odontologoRow.innerHTML = '<td>' + updateButton + '</td>' +
                               '<td class=\"td_first_name\">' + odontologo.nombre.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + odontologo.apellido.toUpperCase() + '</td>' +
                               '<td>' + deleteButton + '</td>';
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
 
 (function(){
   let pathname = window.location.pathname;
-  if (pathname == "/studentsList.html") {
+  if (pathname == "/odontologoList.html") {
       document.querySelector(".nav .nav-item a:last").addClass("active");
   }
 })

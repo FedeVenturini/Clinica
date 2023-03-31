@@ -52,7 +52,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/studentsList.html") {
+        } else if (pathname == "/odontologoList.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
     //Buscamos y obtenemos el formulario donde estan
     //los datos que el usuario pudo haber modificado del estudiante
-    const formulario = document.querySelector('#update_student_form');
+    const formulario = document.querySelector('#update_paciente_form');
     formulario.addEventListener('submit', function (event) {
         let odontologoId = document.querySelector('#odontologo_id').value;
 
@@ -43,10 +43,10 @@ window.addEventListener('load', function () {
           fetch(url,settings)
           .then(response => response.json())
           .then(data => {
-              let student = data;
-              document.querySelector('#odontologo_id').value = student.id;
-              document.querySelector('#nombre').value = student.name;
-              document.querySelector('#apellido').value = student.lastname;
+              let paciente = data;
+              document.querySelector('#odontologo_id').value = paciente.id;
+              document.querySelector('#nombre').value = paciente.name;
+              document.querySelector('#apellido').value = paciente.lastname;
 
             //el formulario por default esta oculto y al editar se habilita
               document.querySelector('#div_odontologo_updating').style.display = "block";
