@@ -3,11 +3,11 @@ window.addEventListener('load', function () {
     const formulario = document.querySelector('#add_new_odontologo');
 
     formulario.addEventListener('submit', function (event) {
-
+        event.preventDefault()
         const formData = {
             nombre: document.querySelector('#nombre').value,
             apellido: document.querySelector('#apellido').value,
-
+            matricula: document.querySelector('#matricula').value,
         };
 
         const url = '/odontologos';
@@ -24,7 +24,7 @@ window.addEventListener('load', function () {
             .then(data => {
                  let successAlert = '<div class="alert alert-success alert-dismissible">' +
                      '<button type="button" class="close" data-dismiss="alert">&times;</button>' +
-                     '<strong></strong> Estudiante agregado </div>'
+                     '<strong></strong> Odontologo agregado </div>'
 
                  document.querySelector('#response').innerHTML = successAlert;
                  document.querySelector('#response').style.display = "block";
@@ -45,6 +45,7 @@ window.addEventListener('load', function () {
     function resetUploadForm(){
         document.querySelector('#nombre').value = "";
         document.querySelector('#apellido').value = "";
+        document.querySelector('#matricula').value = "";
 
     }
 
@@ -52,7 +53,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/studentsList.html") {
+        } else if (pathname == "/odontologoList.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

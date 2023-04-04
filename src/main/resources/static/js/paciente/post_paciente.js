@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
      //Al cargar la pagina buscamos y obtenemos el formulario donde estarán
      //los datos que el usuario cargará del nuevo estudiante
-    const formulario = document.querySelector('#add_new_odontologo');
+    const formulario = document.querySelector('#add_new_paciente');
 
     //Ante un submit del formulario se ejecutará la siguiente funcion
     formulario.addEventListener('submit', function (event) {
@@ -16,7 +16,7 @@ window.addEventListener('load', function () {
 
         //invocamos utilizando la función fetch la API estudiantes con el método POST
         //que guardará al estudiante que enviaremos en formato JSON
-        const url = '/odontologos';
+        const url = '/pacientes';
         const settings = {
             method: 'POST',
             headers: {
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
         let pathname = window.location.pathname;
         if(pathname === "/"){
             document.querySelector(".nav .nav-item a:first").addClass("active");
-        } else if (pathname == "/studentsList.html") {
+        } else if (pathname == "/pacienteList.html") {
             document.querySelector(".nav .nav-item a:last").addClass("active");
         }
     })();

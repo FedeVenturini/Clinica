@@ -1,6 +1,6 @@
 window.addEventListener('load', function () {
 
-    const formulario = document.querySelector('#update_student_form');
+    const formulario = document.querySelector('#update_odontologo_form');
     formulario.addEventListener('submit', function (event) {
         let odontologoId = document.querySelector('#odontologo_id').value;
 
@@ -34,9 +34,10 @@ window.addEventListener('load', function () {
           .then(response => response.json())
           .then(data => {
               let student = data;
-              document.querySelector('#odontologo_id').value = student.id;
-              document.querySelector('#nombre').value = student.name;
-              document.querySelector('#apellido').value = student.lastname;
+              document.querySelector('#odontologo_id').value = odontologo.id;
+              document.querySelector('#nombre').value = odontologo.nombre;
+              document.querySelector('#apellido').value = odontologo.apellido;
+              document.querySelector('#matricula').value = odontologo.matricula;
 
               document.querySelector('#div_odontologo_updating').style.display = "block";
           }).catch(error => {
