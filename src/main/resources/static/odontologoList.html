@@ -12,33 +12,35 @@
     <script type="text/javascript" src="/js/odontologo/put_odontologo.js"></script>
     <script type="text/javascript" src="/js/odontologo/delete_odontologo.js"></script>
 </head>
-<body>
+<body class="bg-dark text-white text-center d-flex flex-column justify-content-center">
 <div class="container">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills mt-2">
         <li class="nav-item">
-            <a class="nav-link" href="/">Agregar nuevo</a>
+            <a class="nav-link text-white mr-2" href="/" style="background-color:#005F9E">Agregar nuevo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/odontologoList.html/">Todos</a>
+            <a class="nav-link text-white" href="/odontologoList.html/" style="background-color:#005F9E">Todos</a>
         </li>
     </ul>
 
     <div id="div_odontologo_table">
         <h1>Odontologos</h1>
-        <div class="row col-md-6 table-responsive">
-            <table id="odontologoTable" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Matricula</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <div class="d-flex justify-content-center">
+            <div class="row table-responsive text-center col-6">
+                <table id="odontologoTable" class="table table-striped">
+                    <thead class="text-white">
+                    <tr style="background-color:#4DA8DA">
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Matricula</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="row">
