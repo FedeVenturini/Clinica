@@ -5,6 +5,7 @@ import com.dh.Clinica.entity.Odontologo;
 import com.dh.Clinica.repository.IOdontologoRepository;
 import com.dh.Clinica.service.IOdontologoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +16,8 @@ import java.util.Set;
 
 @Service
 public class OdontologoService implements IOdontologoService {
+
+    private static final Logger logger = Logger.getLogger(OdontologoService.class);
     @Autowired
     private IOdontologoRepository odontologoRepository;
 
@@ -23,21 +26,26 @@ public class OdontologoService implements IOdontologoService {
 
     @Override
     public void crearOdontologo(OdontologoDTO odontologoDTO) {
+        logger.info("Creando odontologo...");
         Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
         odontologoRepository.save(odontologo);
+        logger.info("Odontologo creado: " + odontologo);
     }
 
     @Override
     public OdontologoDTO buscarOdontologo(Long id) {
+        logger.info("Buscando odontologo por ID...");
         Optional<Odontologo> odontologo = odontologoRepository.findById(id);
         OdontologoDTO odontologoDTO = null;
         if(odontologo.isPresent())
-            odontologoDTO = mapper.convertValue(odontologo, OdontologoDTO.class);
+            logger.info("Odontologo encontrado con el ID: " + id);
+        odontologoDTO = mapper.convertValue(odontologo, OdontologoDTO.class);
         return odontologoDTO;
     }
 
     @Override
     public void actualizarOdontologo(OdontologoDTO odontologoDTO) {
+        logger.info("Actualizando datos del Odontologo: " + odontologoDTO);
         Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
         odontologoRepository.save(odontologo);
     }
@@ -45,6 +53,7 @@ public class OdontologoService implements IOdontologoService {
     @Override
     public void eliminarOdontologo(Long id) {
         odontologoRepository.deleteById(id);
+        logger.info("Odontologo con ID: " + id + " eliminando.");
     }
 
     @Override
@@ -55,6 +64,7 @@ public class OdontologoService implements IOdontologoService {
         for (Odontologo odontologo: odontologos){
             odontologosDTO.add(mapper.convertValue(odontologo, OdontologoDTO.class));
         }
+        logger.info("Creada la lista de todos los odontologos.");
         return odontologosDTO;
     }
 }

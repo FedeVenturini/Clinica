@@ -1,10 +1,8 @@
 package com.dh.Clinica.controller;
 
-import com.dh.Clinica.GlobalExceptionHandler;
 import com.dh.Clinica.dto.OdontologoDTO;
 import com.dh.Clinica.service.IOdontologoService;
 import jakarta.validation.Valid;
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,11 +16,9 @@ public class OdontologoController {
     @Autowired
     IOdontologoService odontologoService;
 
-    private static Logger logger = Logger.getLogger(GlobalExceptionHandler.class);
 
     @GetMapping("/{id}")
     public OdontologoDTO traerOdontologo(@PathVariable Long id){
-        logger.info("Odontologo encontrado al buscar id " + id);
         return odontologoService.buscarOdontologo(id);
     }
 

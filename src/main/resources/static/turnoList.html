@@ -12,32 +12,35 @@
     <script type="text/javascript" src="/js/turno/put_turno.js"></script>
     <script type="text/javascript" src="/js/turno/delete_turno.js"></script>
 </head>
-<body>
+<body class="bg-dark text-white text-center d-flex flex-column justify-content-center">
 <div class="container">
-    <ul class="nav nav-pills">
+    <ul class="nav nav-pills mt-2">
         <li class="nav-item">
-            <a class="nav-link" href="/">Agregar nuevo</a>
+            <a class="nav-link text-white mr-2" href="/" style="background-color:#005F9E">Agregar nuevo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/turnoList.html/">Todos</a>
+            <a class="nav-link text-white" href="/turnoList.html/" style="background-color:#005F9E">Todos</a>
         </li>
     </ul>
 
     <div id="div_turno_table">
         <h1>Turno</h1>
-        <div class="row col-md-6 table-responsive">
-            <table id="turnoTable" class="table table-striped">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <div class="d-flex justify-content-center">
+            <div class="row table-responsive text-center col-6">
+                <table id="turnoTable" class="table table-striped">
+                    <thead class="text-white">
+                    <tr style="background-color:#4DA8DA">
+                        <th>Id</th>
+                        <th>Fecha Turno</th>
+                        <th>Odontologo</th>
+                        <th>Paciente</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -50,14 +53,17 @@
                     <input type="text" class="form-control" id="turno_id" readonly>
                 </div>
                 <div class="form-group">
-                    <label >Nombre:</label>
-                    <input type="text" class="form-control" placeholder="Nombre" id="nombre">
+                    <label >Fecha Turno:</label>
+                    <input type="date" class="form-control" placeholder="Fecha" id="fecha">
                 </div>
                 <div class="form-group">
-                    <label >Apellido:</label>
-                    <input type="text" class="form-control" placeholder="Apellido" id="apellido">
+                    <label >Odontologo:</label>
+                    <input type="text" class="form-control" placeholder="Odontologo" id="odontologo">
                 </div>
-
+                <div class="form-group">
+                    <label >Paciente:</label>
+                    <input type="text" class="form-control" placeholder="Paciente" id="paciente">
+                </div>
 
                 <button type="submit" class="btn btn-primary">Modificar</button>
             </form>

@@ -1,10 +1,10 @@
 package com.dh.Clinica.dto;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
+@Data
 public class OdontologoDTO {
     private Long id;
     private String nombre;
