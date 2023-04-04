@@ -45,7 +45,7 @@ window.addEventListener('load', function () {
           //como primer columna pondremos el boton modificar
           //luego los datos del estudiante
           //como ultima columna el boton eliminar
-         studentRow.innerHTML = '<td>' + updateButton + '</td>' +
+         pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
                               '<td class=\"td_first_name\">' + odontologo.nombre.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + odontologo.apellido.toUpperCase() + '</td>' +
                               '<td>' + deleteButton + '</td>';
@@ -57,7 +57,7 @@ window.addEventListener('load', function () {
 
 (function(){
   let pathname = window.location.pathname;
-  if (pathname == "/studentsList.html") {
+  if (pathname == "/pacienteList.html") {
       document.querySelector(".nav .nav-item a:last").addClass("active");
   }
 })

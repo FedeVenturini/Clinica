@@ -13,7 +13,7 @@ public class GlobalExceptionHandler {
     private static Logger logger = Logger.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> errores(Exception ex, WebRequest req){
+    public ResponseEntity<?> todosErrores(Exception ex, WebRequest req){
         logger.error(ex.getMessage());
         return new ResponseEntity("Error " + ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
