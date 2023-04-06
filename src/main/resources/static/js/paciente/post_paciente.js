@@ -11,7 +11,7 @@ window.addEventListener('load', function () {
                         calle: document.querySelector('#calle').value,
                         numero: document.querySelector('#numero').value,
                         localidad: document.querySelector('#localidad').value,
-                        provincia: document.querySelector('#provincia').value
+                        provincia: document.querySelector('#provincia').value,
             }
         };
 

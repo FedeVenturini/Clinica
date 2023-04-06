@@ -36,6 +36,7 @@ window.addEventListener('load', function () {
                               '<td class=\"td_last_name\">' + paciente.numero + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.localidad.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.provincia.toUpperCase() + '</td>' +
+
                               '<td>' + deleteButton + '</td>';
 
         };

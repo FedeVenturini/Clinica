@@ -2,6 +2,7 @@ package com.dh.Clinica.service.impl;
 
 import com.dh.Clinica.dto.OdontologoDTO;
 import com.dh.Clinica.entity.Odontologo;
+import com.dh.Clinica.exceptions.BadRequestException;
 import com.dh.Clinica.repository.IOdontologoRepository;
 import com.dh.Clinica.service.IOdontologoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,7 +26,11 @@ public class OdontologoService implements IOdontologoService {
     ObjectMapper mapper;
 
     @Override
-    public void crearOdontologo(OdontologoDTO odontologoDTO) {
+    public void crearOdontologo(OdontologoDTO odontologoDTO) throws BadRequestException {
+        int matricula = odontologoDTO.getMatricula();
+        Optional<Odontologo> odontologoExiste = odontologoRepository.traerMatricula(matricula);
+        if (odontologoExiste.isPresent())
+            throw new BadRequestException("La matricula que intenta registrar, ya existe");
         logger.info("Creando odontologo...");
         Odontologo odontologo = mapper.convertValue(odontologoDTO, Odontologo.class);
         odontologoRepository.save(odontologo);
