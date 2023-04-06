@@ -21,7 +21,7 @@ public class Paciente {
     private Long id;
     private String nombre;
     private String apellido;
-    private String dni;
+    private int dni;
     private Date fechaDeAlta;
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private Domicilio domicilio;
