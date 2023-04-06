@@ -9,7 +9,6 @@ window.addEventListener('load', function () {
     .then(response => response.json())
     .then(data => {
          for(paciente of data){
-
           var table = document.getElementById("pacienteTable");
           var pacienteRow =table.insertRow();
           let tr_id = 'tr_' + paciente.id;
@@ -33,6 +32,10 @@ window.addEventListener('load', function () {
          pacienteRow.innerHTML = '<td>' + updateButton + '</td>' +
                               '<td class=\"td_first_name\">' + paciente.nombre.toUpperCase() + '</td>' +
                               '<td class=\"td_last_name\">' + paciente.apellido.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.calle.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.numero + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.localidad.toUpperCase() + '</td>' +
+                              '<td class=\"td_last_name\">' + paciente.provincia.toUpperCase() + '</td>' +
                               '<td>' + deleteButton + '</td>';
 
         };

@@ -6,7 +6,6 @@ import lombok.*;
 
 
 import java.util.Date;
-import java.util.HashSet;
 import java.util.Set;
 @Builder
 @Entity
@@ -24,8 +23,9 @@ public class Paciente {
     private String apellido;
     private String dni;
     private Date fechaDeAlta;
-    @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
-    private Set<Domicilio> domicilios = new HashSet<>();
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private Domicilio domicilio;
+
     @OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Turno> turnos;

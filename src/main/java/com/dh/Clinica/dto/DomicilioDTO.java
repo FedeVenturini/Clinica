@@ -7,8 +7,9 @@ import lombok.Setter;
 
 @Data
 public class DomicilioDTO {
+    private Long id;
     private String calle;
     private String numero;
-    private Paciente paciente;
-
+    private String localidad;
+    private String provincia;
 }
